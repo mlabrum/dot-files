@@ -15,6 +15,7 @@ alias worker="cd $worker"
 alias m="mate"
 alias ll="ls -lh"
 alias lla="ls -lah"
+alias tidyxml='tidy -xml -i -w 90000'
 
 # Rails aliases
 alias c="if [ -f 'script/console' ]; then script/console; else rails console; fi;"
@@ -60,3 +61,13 @@ alias status="gs"
 alias hosts="sudo mate /private/etc/hosts"
 alias httpd="sudo mate /private/etc/apache2/httpd.conf"
 alias vhosts="sudo mate /private/etc/apache2/extra/httpd-vhosts.conf"
+
+# Bash history options
+export HISTIGNORE="&:git:cd:ls:[bf]g:exit:irb" #ignore duplicates, and ls, exit and irb
+
+export HISTFILESIZE=20000 # Record last 20,000 commands
+export HISTSIZE=10000 # Record last 10,000 commands per session
+
+# New shells will get the history from the previous shell
+PROMPT_COMMAND='history -a'
+shopt -s histappend
