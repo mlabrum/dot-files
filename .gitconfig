@@ -1,7 +1,16 @@
 [user]
-	name = vonconrad
-	email = sebastian@e-channel.com.au
-
+	name = Matt Labrum
+	email = mattl@mybudget.com.au
+[core]
+	editor = 'SciTE.exe'
+	excludesfile = ~/.gitignore_global
+[alias]
+	tpull = !git tfs fetch && git rebase tfs/default
+	difftfs = diff tfs/default..master
+	branches = branch
+	lg = log --graph --abbrev-commit --date=relative --pretty='format:%Cred%h%Creset - %s %Cgreen(%cr) %C(yellow)<%an>%C(reset)%C(white).'
+	out = outgoing
 [color]
     ui = true
-    
+[tfs-remote "default"]
+	autotag = true
